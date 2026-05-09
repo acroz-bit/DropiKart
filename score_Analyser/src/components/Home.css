@@ -9,7 +9,7 @@
 
 body{
     font-family:"Roboto",sans-serif;
-    background:#f8f8fb;
+    background:var(--page-bg);
 }
 
 /* MAIN PAGE */
@@ -20,7 +20,7 @@ body{
 
     padding:70px 40px;
 
-    background:#f8f8fb;
+    background:var(--page-bg);
 }
 
 /* HERO SECTION */
@@ -52,7 +52,7 @@ body{
     line-height:0.92;
     letter-spacing:-3px;
 
-    color:#050b1f;
+    color:var(--text-heading);
 }
 
 /* SUBTEXT */
@@ -65,11 +65,11 @@ body{
     font-size:22px;
     line-height:1.6;
 
-    color:#6b7280;
+    color:var(--text-muted);
 }
 
 .hero-left p span{
-    color:#6d35f5;
+    color:var(--accent);
     font-weight:700;
 }
 
@@ -102,8 +102,8 @@ body{
 
     background:linear-gradient(
         135deg,
-        #7c3aed,
-        #5b21b6
+        var(--accent-bright),
+        var(--accent-strong)
     );
 
     color:white;
@@ -114,7 +114,7 @@ body{
     font-weight:600;
 
     box-shadow:
-    0 12px 28px rgba(109,53,245,0.28);
+    0 12px 28px var(--accent-shadow);
 
     transition:all 0.25s ease;
 }
@@ -123,7 +123,7 @@ body{
     transform:translateY(-2px);
 
     box-shadow:
-    0 18px 36px rgba(109,53,245,0.35);
+    0 18px 36px var(--accent-shadow-strong);
 }
 
 /* SECONDARY BUTTON */
@@ -141,11 +141,11 @@ body{
 
     border-radius:18px;
 
-    border:1px solid #e5e7eb;
+    border:1px solid var(--border-strong);
 
-    background:white;
+    background:var(--surface);
 
-    color:#111827;
+    color:var(--text-primary);
 
     font-size:20px;
     font-weight:600;
@@ -153,13 +153,13 @@ body{
     cursor:pointer;
 
     box-shadow:
-    0 4px 12px rgba(0,0,0,0.04);
+    var(--shadow-sm);
 
     transition:all 0.25s ease;
 }
 
 .secondary-btn:hover{
-    background:#f9fafb;
+    background:var(--surface-soft);
 
     transform:translateY(-2px);
 }
@@ -176,7 +176,7 @@ body{
 .score-card{
     width:650px;
 
-    background:white;
+    background:var(--surface);
 
     border-radius:28px;
 
@@ -186,7 +186,7 @@ body{
     gap:34px;
 
     box-shadow:
-    0 20px 60px rgba(0,0,0,0.08);
+    var(--shadow-lg);
 }
 
 /* LEFT SCORE SECTION */
@@ -198,12 +198,12 @@ body{
 
     padding-right:28px;
 
-    border-right:1px solid #eeeeee;
+    border-right:1px solid var(--border-soft);
 }
 
 .score-left h3{
     font-size:22px;
-    color:#111827;
+    color:var(--text-primary);
 }
 
 /* CIRCLE SCORE */
@@ -227,7 +227,7 @@ body{
 
     border-radius:50%;
 
-    background:white;
+    background:var(--surface);
 
     display:flex;
     flex-direction:column;
@@ -239,12 +239,12 @@ body{
     font-size:54px;
     font-weight:800;
 
-    color:#050b1f;
+    color:var(--text-heading);
 }
 
 .circle-inner p{
     font-size:18px;
-    color:#6b7280;
+    color:var(--text-muted);
 }
 
 /* STATUS BOX */
@@ -278,7 +278,7 @@ body{
     margin-top:16px;
 
     font-size:15px;
-    color:#374151;
+    color:var(--text-secondary);
 }
 
 /* RIGHT SIDE */
@@ -289,7 +289,7 @@ body{
 
 .score-right h3{
     font-size:22px;
-    color:#111827;
+    color:var(--text-primary);
 }
 
 /* PROGRESS BARS */
@@ -307,14 +307,14 @@ body{
 
     font-size:15px;
 
-    color:#111827;
+    color:var(--text-primary);
 }
 
 .progress-track{
     width:100%;
     height:8px;
 
-    background:#e5e7eb;
+    background:var(--surface-track);
 
     border-radius:999px;
 
@@ -324,7 +324,7 @@ body{
 .progress-fill{
     height:100%;
 
-    background:#6d35f5;
+    background:var(--accent);
 
     border-radius:999px;
 }
@@ -337,7 +337,7 @@ body{
 
 .market-insights h4{
     font-size:18px;
-    color:#111827;
+    color:var(--text-primary);
 }
 
 .insight-grid{
@@ -352,22 +352,22 @@ body{
 .insight-box{
     padding:18px;
 
-    border:1px solid #eeeeee;
+    border:1px solid var(--border-soft);
     border-radius:16px;
 
-    background:#ffffff;
+    background:var(--surface);
 }
 
 .insight-box p{
     font-size:14px;
-    color:#6b7280;
+    color:var(--text-muted);
 }
 
 .insight-box h3{
     margin-top:10px;
 
     font-size:28px;
-    color:#050b1f;
+    color:var(--text-heading);
 }
 
 .insight-box span{
@@ -391,7 +391,7 @@ body{
 }
 
 .mini-graph polyline{
-    filter:drop-shadow(0 4px 6px rgba(109,53,245,0.25));
+    filter:drop-shadow(0 4px 6px var(--accent-shadow));
 }
 
 /* RESPONSIVE */
@@ -426,7 +426,7 @@ body{
         width:100%;
 
         border-right:none;
-        border-bottom:1px solid #eeeeee;
+        border-bottom:1px solid var(--border-soft);
 
         padding-right:0;
         padding-bottom:30px;
@@ -456,13 +456,13 @@ body{
     gap:10px;
 
     font-size:22px;
-    color:#111827;
+    color:var(--text-primary);
 }
 
 .section-header p{
     margin-top:6px;
     font-size:15px;
-    color:#6b7280;
+    color:var(--text-muted);
 }
 
 .view-all{
@@ -471,7 +471,7 @@ body{
     gap:8px;
 
     text-decoration:none;
-    color:#111827;
+    color:var(--text-primary);
 
     font-weight:600;
 }
@@ -483,14 +483,14 @@ body{
 }
 
 .product-card{
-    background:white;
+    background:var(--surface);
 
-    border:1px solid #eeeeee;
+    border:1px solid var(--border-soft);
     border-radius:16px;
 
     overflow:hidden;
 
-    box-shadow:0 8px 24px rgba(0,0,0,0.04);
+    box-shadow:var(--shadow-md);
 }
 
 .product-card img{
@@ -499,7 +499,7 @@ body{
 
     object-fit:cover;
 
-    background:#f3f4f6;
+    background:var(--surface-image);
 }
 
 .product-info{
@@ -513,7 +513,7 @@ body{
 
 .product-info h3{
     font-size:16px;
-    color:#111827;
+    color:var(--text-primary);
 
     margin-bottom:10px;
 }
@@ -523,8 +523,8 @@ body{
 
     border-radius:8px;
 
-    background:#f3edff;
-    color:#6d35f5;
+    background:var(--surface-accent);
+    color:var(--accent);
 
     font-size:13px;
     font-weight:700;
@@ -543,8 +543,8 @@ body{
     font-size:15px;
     font-weight:800;
 
-    color:#111827;
-    background:white;
+    color:var(--text-primary);
+    background:var(--surface);
 }
 
 .score-good{
@@ -562,16 +562,16 @@ body{
 
     padding:26px 30px;
 
-    background:white;
+    background:var(--surface);
 
-    border:1px solid #eeeeee;
+    border:1px solid var(--border-soft);
     border-radius:20px;
 
     display:grid;
     grid-template-columns:repeat(4,1fr);
     gap:30px;
 
-    box-shadow:0 8px 24px rgba(0,0,0,0.04);
+    box-shadow:var(--shadow-md);
 }
 
 .stat-card{
@@ -590,15 +590,15 @@ body{
     align-items:center;
     justify-content:center;
 
-    background:#f0e9ff;
-    color:#6d35f5;
+    background:var(--surface-accent);
+    color:var(--accent);
 
     font-size:28px;
 }
 
 .stat-card h3{
     font-size:28px;
-    color:#050b1f;
+    color:var(--text-heading);
 }
 
 .stat-card p{
@@ -607,7 +607,7 @@ body{
     font-size:15px;
     font-weight:600;
 
-    color:#374151;
+    color:var(--text-secondary);
 }
 
 .stat-card span{
@@ -616,7 +616,7 @@ body{
     margin-top:4px;
 
     font-size:14px;
-    color:#6b7280;
+    color:var(--text-muted);
 }
 
 /* RESPONSIVE ADDITIONS */

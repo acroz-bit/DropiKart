@@ -111,7 +111,7 @@ const ScoreCard = ({
         <div
           className="circle-score"
           style={{
-            background: `conic-gradient(${scoreRingColor} ${score * 3.6}deg, #ece9ff 0deg)`,
+            background: `conic-gradient(${scoreRingColor} ${score * 3.6}deg, var(--ring-track) 0deg)`,
           }}
         >
           <div className="circle-inner">

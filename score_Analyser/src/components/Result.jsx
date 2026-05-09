@@ -89,7 +89,7 @@ const Result = ({ resultData }) => {
             style={{
               background: `conic-gradient(${ringColor} ${
                 data.totalScore * 3.6
-              }deg, #eef0f6 0deg)`,
+              }deg, var(--surface-step) 0deg)`,
             }}
           >
             <div className="result-circle-inner">

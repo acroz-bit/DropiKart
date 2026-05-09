@@ -2,7 +2,7 @@
     width:100%;
     min-height:100vh;
     padding:50px;
-    background:#f8f8fb;
+    background:var(--page-bg);
 }
 
 /* HERO */
@@ -21,8 +21,8 @@
 
     padding:10px 18px;
 
-    background:#f0e9ff;
-    color:#6d35f5;
+    background:var(--surface-accent);
+    color:var(--accent);
 
     border-radius:999px;
 
@@ -35,19 +35,19 @@
 .about-hero h1{
     font-size:60px;
     font-weight:900;
-    color:#050b1f;
+    color:var(--text-heading);
 
     margin-bottom:22px;
 }
 
 .about-hero h1 span{
-    color:#6d35f5;
+    color:var(--accent);
 }
 
 .about-hero p{
     font-size:20px;
     line-height:1.8;
-    color:#4b5563;
+    color:var(--text-secondary);
 }
 
 /* TEAM GRID */
@@ -63,15 +63,15 @@
 /* CARD */
 
 .team-card{
-    background:white;
+    background:var(--surface);
 
     padding:34px;
 
     border-radius:24px;
 
-    border:1px solid #ececf3;
+    border:1px solid var(--border);
 
-    box-shadow:0 10px 30px rgba(0,0,0,0.04);
+    box-shadow:var(--shadow-md);
 }
 
 .team-icon{
@@ -90,8 +90,8 @@
 }
 
 .team-icon.frontend{
-    background:#f0e9ff;
-    color:#6d35f5;
+    background:var(--surface-accent);
+    color:var(--accent);
 }
 
 .team-icon.backend{
@@ -101,14 +101,14 @@
 
 .team-card h2{
     font-size:20px;
-    color:#6b7280;
+    color:var(--text-muted);
 
     margin-bottom:10px;
 }
 
 .team-card h3{
     font-size:34px;
-    color:#111827;
+    color:var(--text-primary);
 
     margin-bottom:18px;
 }
@@ -116,7 +116,7 @@
 .team-card p{
     font-size:17px;
     line-height:1.8;
-    color:#4b5563;
+    color:var(--text-secondary);
 
     margin-bottom:28px;
 }
@@ -132,7 +132,7 @@
 
     padding:14px 22px;
 
-    background:#6d35f5;
+    background:var(--accent);
     color:white;
 
     border-radius:14px;
@@ -149,26 +149,26 @@
     transform:translateY(-2px);
 
     box-shadow:
-    0 10px 20px rgba(109,53,245,0.25);
+    0 10px 20px var(--accent-shadow);
 }
 
 /* FOOTER CARD */
 
 .about-footer-card{
-    background:white;
+    background:var(--surface);
 
     padding:36px;
 
     border-radius:24px;
 
-    border:1px solid #ececf3;
+    border:1px solid var(--border);
 
-    box-shadow:0 10px 30px rgba(0,0,0,0.04);
+    box-shadow:var(--shadow-md);
 }
 
 .about-footer-card h2{
     font-size:34px;
-    color:#111827;
+    color:var(--text-primary);
 
     margin-bottom:18px;
 }
@@ -176,7 +176,7 @@
 .about-footer-card p{
     font-size:18px;
     line-height:1.9;
-    color:#4b5563;
+    color:var(--text-secondary);
 }
 
 /* RESPONSIVE */

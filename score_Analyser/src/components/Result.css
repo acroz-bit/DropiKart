@@ -3,12 +3,12 @@
     width:100%;
     min-height:100vh;
     padding:40px;
-    background:#f8f8fb;
+    background:var(--page-bg);
 }
 
 .result-page h1{
     font-size:30px;
-    color:#111827;
+    color:var(--text-primary);
     margin-bottom:28px;
 }
 
@@ -24,7 +24,7 @@
     display:flex;
     align-items:center;
     gap:10px;
-    color:#6b7280;
+    color:var(--text-muted);
     font-weight:600;
 }
 
@@ -38,7 +38,7 @@
     align-items:center;
     justify-content:center;
 
-    background:#eef0f6;
+    background:var(--surface-step);
 }
 
 .result-step.completed .step-circle{
@@ -47,18 +47,18 @@
 }
 
 .result-step.active .step-circle{
-    background:#6d35f5;
+    background:var(--accent);
     color:white;
 }
 
 .result-step.active p{
-    color:#111827;
+    color:var(--text-primary);
 }
 
 .step-line{
     flex:1;
     height:2px;
-    background:#e5e7eb;
+    background:var(--surface-track);
     margin:0 28px;
 }
 
@@ -75,10 +75,10 @@
 .final-score-card,
 .result-details,
 .info-card{
-    background:white;
-    border:1px solid #ececf3;
+    background:var(--surface);
+    border:1px solid var(--border);
     border-radius:20px;
-    box-shadow:0 8px 24px rgba(0,0,0,0.04);
+    box-shadow:var(--shadow-md);
 }
 
 /* LEFT SCORE CARD */
@@ -107,7 +107,7 @@
 
     border-radius:50%;
 
-    background:white;
+    background:var(--surface);
 
     display:flex;
     flex-direction:column;
@@ -118,12 +118,12 @@
 .result-circle-inner h2{
     font-size:58px;
     font-weight:800;
-    color:#050b1f;
+    color:var(--text-heading);
 }
 
 .result-circle-inner p{
     font-size:20px;
-    color:#6b7280;
+    color:var(--text-muted);
 }
 
 /* WINNING / AVERAGE */
@@ -176,7 +176,7 @@
     font-size:16px;
     line-height:1.6;
 
-    color:#374151;
+    color:var(--text-secondary);
 }
 
 /* DETAILS */
@@ -187,7 +187,7 @@
 
 .result-product-name{
     margin-bottom:12px;
-    color:#6b7280;
+    color:var(--text-muted);
     font-size:15px;
     font-weight:700;
     letter-spacing:0.02em;
@@ -195,27 +195,27 @@
 }
 
 .result-empty-state{
-    background:white;
-    border:1px solid #ececf3;
+    background:var(--surface);
+    border:1px solid var(--border);
     border-radius:20px;
-    box-shadow:0 8px 24px rgba(0,0,0,0.04);
+    box-shadow:var(--shadow-md);
     padding:40px 24px;
     text-align:center;
 }
 
 .result-empty-state h2{
-    color:#111827;
+    color:var(--text-primary);
     margin-bottom:12px;
 }
 
 .result-empty-state p{
-    color:#6b7280;
+    color:var(--text-muted);
     margin-bottom:20px;
 }
 
 .result-details h2{
     font-size:22px;
-    color:#111827;
+    color:var(--text-primary);
     margin-bottom:18px;
 }
 
@@ -230,26 +230,26 @@
 .score-box{
     padding:22px;
 
-    border:1px solid #ececf3;
+    border:1px solid var(--border);
     border-radius:16px;
 
-    background:#ffffff;
+    background:var(--surface);
 }
 
 .score-box p{
-    color:#6b7280;
+    color:var(--text-muted);
     font-weight:600;
     margin-bottom:12px;
 }
 
 .score-box h3{
     font-size:34px;
-    color:#050b1f;
+    color:var(--text-heading);
 }
 
 .score-box h3 span{
     font-size:18px;
-    color:#6b7280;
+    color:var(--text-muted);
 }
 
 /* MARKET INSIGHTS */
@@ -267,26 +267,26 @@
 .market-card{
     padding:22px;
 
-    border:1px solid #ececf3;
+    border:1px solid var(--border);
     border-radius:16px;
 
-    background:white;
+    background:var(--surface);
 }
 
 .market-card p{
-    color:#6b7280;
+    color:var(--text-muted);
     font-weight:600;
     margin-bottom:12px;
 }
 
 .market-card h3{
     font-size:36px;
-    color:#050b1f;
+    color:var(--text-heading);
 }
 
 .market-card h3 span{
     font-size:18px;
-    color:#6b7280;
+    color:var(--text-muted);
 }
 
 /* ADS CARD */
@@ -300,9 +300,9 @@
 .ads-card svg{
     font-size:46px;
 
-    color:#6d35f5;
+    color:var(--accent);
 
-    background:#f0e9ff;
+    background:var(--surface-accent);
 
     padding:10px;
 
@@ -337,7 +337,7 @@
 
 .result-mini-graph polyline{
     filter:drop-shadow(
-        0 4px 6px rgba(109,53,245,0.25)
+        0 4px 6px var(--accent-shadow)
     );
 }
 
@@ -429,7 +429,7 @@
 }
 
 .info-row p{
-    color:#374151;
+    color:var(--text-secondary);
     font-weight:500;
     line-height:1.5;
 }
@@ -466,18 +466,18 @@
 }
 
 .reset-btn{
-    background:white;
-    color:#374151;
-    border:1px solid #e5e7eb;
+    background:var(--surface);
+    color:var(--text-secondary);
+    border:1px solid var(--border-strong);
 }
 
 .save-btn{
-    background:#6d35f5;
+    background:var(--accent);
     color:white;
     border:none;
 
     box-shadow:
-    0 8px 20px rgba(109,53,245,0.25);
+    0 8px 20px var(--accent-shadow);
 }
 
 .reset-btn:hover,

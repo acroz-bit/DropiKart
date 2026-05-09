@@ -1,4 +1,80 @@
 @import url('https://fonts.googleapis.com/css2?family=Inter:wght@100..900&display=swap');
+
+:root{
+  color-scheme: light;
+  --page-bg:#f8f8fb;
+  --surface:#ffffff;
+  --surface-muted:#fbfbfd;
+  --surface-soft:#f9fafb;
+  --surface-panel:#faf9ff;
+  --surface-hover:#f5f1ff;
+  --surface-accent:#f0e9ff;
+  --surface-accent-soft:#ede9fe;
+  --surface-accent-hover:#ddd6fe;
+  --surface-image:#f3f4f6;
+  --surface-step:#eef0f6;
+  --surface-track:#e5e7eb;
+  --border:#ececf3;
+  --border-strong:#e5e7eb;
+  --border-soft:#eeeeee;
+  --border-sidebar:#e8e8ef;
+  --text-primary:#111827;
+  --text-heading:#050b1f;
+  --text-secondary:#374151;
+  --text-muted:#6b7280;
+  --text-faint:#4b5563;
+  --text-subtle:#9ca3af;
+  --accent:#6d35f5;
+  --accent-strong:#5b21b6;
+  --accent-bright:#7c3aed;
+  --shadow-sm:0 4px 12px rgba(0,0,0,0.04);
+  --shadow-md:0 8px 24px rgba(0,0,0,0.04);
+  --shadow-lg:0 20px 60px rgba(0,0,0,0.08);
+  --accent-shadow:rgba(109,53,245,0.25);
+  --accent-shadow-strong:rgba(109,53,245,0.35);
+  --ring-track:#ece9ff;
+  --pro-tip-shadow:0 10px 25px rgba(79, 40, 255, 0.25);
+}
+
+:root[data-theme="dark"]{
+  color-scheme: dark;
+  --page-bg:#0b1220;
+  --surface:#111827;
+  --surface-muted:#0f172a;
+  --surface-soft:#162033;
+  --surface-panel:#141c2d;
+  --surface-hover:#1a2340;
+  --surface-accent:#2a1d53;
+  --surface-accent-soft:#312261;
+  --surface-accent-hover:#3d2d73;
+  --surface-image:#182131;
+  --surface-step:#1f2a3f;
+  --surface-track:#334155;
+  --border:#253247;
+  --border-strong:#334155;
+  --border-soft:#2b3546;
+  --border-sidebar:#253247;
+  --text-primary:#e5e7eb;
+  --text-heading:#f8fafc;
+  --text-secondary:#cbd5e1;
+  --text-muted:#94a3b8;
+  --text-faint:#a7b2c5;
+  --text-subtle:#7b8aa4;
+  --accent:#8b5cf6;
+  --accent-strong:#7c3aed;
+  --accent-bright:#a78bfa;
+  --shadow-sm:0 4px 12px rgba(0,0,0,0.24);
+  --shadow-md:0 12px 28px rgba(0,0,0,0.28);
+  --shadow-lg:0 24px 64px rgba(0,0,0,0.35);
+  --accent-shadow:rgba(139,92,246,0.32);
+  --accent-shadow-strong:rgba(139,92,246,0.42);
+  --ring-track:#1f2a3f;
+  --pro-tip-shadow:0 16px 32px rgba(0, 0, 0, 0.35);
+}
+
 body{
   font-family: "Inter", sans-serif;
+  background:var(--page-bg);
+  color:var(--text-primary);
+  transition:background-color 0.25s ease, color 0.25s ease;
 }
