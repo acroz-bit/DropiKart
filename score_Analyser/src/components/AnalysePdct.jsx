@@ -79,9 +79,10 @@ const AnalysePdct = () => {
       </div>
 
       <div className="analyse-actions">
-        <button className="back-btn">
-          <FiArrowLeft /> Back
-        </button>
+      <Link to="/" className="back-btn">
+  <FiArrowLeft />
+  Back
+</Link>
 
         <Link to="/result" className="next-btn">
   Calculate Score <FiArrowRight />
