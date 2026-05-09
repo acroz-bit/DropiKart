@@ -86,7 +86,7 @@ body{
 
 /* PRIMARY BUTTON */
 
-.primary-button{
+.primary-btn{
     display:flex;
     align-items:center;
     justify-content:center;
@@ -119,7 +119,7 @@ body{
     transition:all 0.25s ease;
 }
 
-.primary-button:hover{
+.primary-btn:hover{
     transform:translateY(-2px);
 
     box-shadow:
@@ -128,7 +128,7 @@ body{
 
 /* SECONDARY BUTTON */
 
-.secondary-button{
+.secondary-btn{
     display:flex;
     align-items:center;
     justify-content:center;
@@ -158,7 +158,7 @@ body{
     transition:all 0.25s ease;
 }
 
-.secondary-button:hover{
+.secondary-btn:hover{
     background:#f9fafb;
 
     transform:translateY(-2px);
@@ -166,8 +166,8 @@ body{
 
 /* BUTTON ICONS */
 
-.primary-button svg,
-.secondary-button svg{
+.primary-btn svg,
+.secondary-btn svg{
     font-size:22px;
 }
 
@@ -383,27 +383,15 @@ body{
 
 /* FAKE GRAPH */
 
-.fake-graph{
-    margin-top:18px;
-
+.mini-graph{
     width:100%;
-    height:40px;
+    height:55px;
 
-    border-radius:8px;
+    margin-top:18px;
+}
 
-    background:
-    linear-gradient(
-        135deg,
-        transparent 20%,
-        #6d35f5 21%,
-        transparent 23%
-    ),
-    linear-gradient(
-        45deg,
-        transparent 48%,
-        #6d35f5 50%,
-        transparent 52%
-    );
+.mini-graph polyline{
+    filter:drop-shadow(0 4px 6px rgba(109,53,245,0.25));
 }
 
 /* RESPONSIVE */
@@ -445,6 +433,210 @@ body{
     }
 
     .insight-grid{
+        grid-template-columns:1fr;
+    }
+}
+/* TRENDING PRODUCTS */
+
+.trending-section{
+    margin-top:70px;
+}
+
+.section-header{
+    display:flex;
+    justify-content:space-between;
+    align-items:center;
+
+    margin-bottom:24px;
+}
+
+.section-header h2{
+    display:flex;
+    align-items:center;
+    gap:10px;
+
+    font-size:22px;
+    color:#111827;
+}
+
+.section-header p{
+    margin-top:6px;
+    font-size:15px;
+    color:#6b7280;
+}
+
+.view-all{
+    display:flex;
+    align-items:center;
+    gap:8px;
+
+    text-decoration:none;
+    color:#111827;
+
+    font-weight:600;
+}
+
+.product-grid{
+    display:grid;
+    grid-template-columns:repeat(5,1fr);
+    gap:26px;
+}
+
+.product-card{
+    background:white;
+
+    border:1px solid #eeeeee;
+    border-radius:16px;
+
+    overflow:hidden;
+
+    box-shadow:0 8px 24px rgba(0,0,0,0.04);
+}
+
+.product-card img{
+    width:100%;
+    height:170px;
+
+    object-fit:cover;
+
+    background:#f3f4f6;
+}
+
+.product-info{
+    padding:16px;
+
+    display:flex;
+    justify-content:space-between;
+    align-items:center;
+    gap:12px;
+}
+
+.product-info h3{
+    font-size:16px;
+    color:#111827;
+
+    margin-bottom:10px;
+}
+
+.product-info span{
+    padding:6px 10px;
+
+    border-radius:8px;
+
+    background:#f3edff;
+    color:#6d35f5;
+
+    font-size:13px;
+    font-weight:700;
+}
+
+.product-score{
+    min-width:42px;
+    height:42px;
+
+    border-radius:50%;
+
+    display:flex;
+    align-items:center;
+    justify-content:center;
+
+    font-size:15px;
+    font-weight:800;
+
+    color:#111827;
+    background:white;
+}
+
+.score-good{
+    border:3px solid #22c55e;
+}
+
+.score-mid{
+    border:3px solid #f59e0b;
+}
+
+/* STATS SECTION */
+
+.stats-section{
+    margin-top:36px;
+
+    padding:26px 30px;
+
+    background:white;
+
+    border:1px solid #eeeeee;
+    border-radius:20px;
+
+    display:grid;
+    grid-template-columns:repeat(4,1fr);
+    gap:30px;
+
+    box-shadow:0 8px 24px rgba(0,0,0,0.04);
+}
+
+.stat-card{
+    display:flex;
+    align-items:center;
+    gap:18px;
+}
+
+.stat-icon{
+    width:58px;
+    height:58px;
+
+    border-radius:14px;
+
+    display:flex;
+    align-items:center;
+    justify-content:center;
+
+    background:#f0e9ff;
+    color:#6d35f5;
+
+    font-size:28px;
+}
+
+.stat-card h3{
+    font-size:28px;
+    color:#050b1f;
+}
+
+.stat-card p{
+    margin-top:4px;
+
+    font-size:15px;
+    font-weight:600;
+
+    color:#374151;
+}
+
+.stat-card span{
+    display:block;
+
+    margin-top:4px;
+
+    font-size:14px;
+    color:#6b7280;
+}
+
+/* RESPONSIVE ADDITIONS */
+
+@media(max-width:1200px){
+    .product-grid{
+        grid-template-columns:repeat(2,1fr);
+    }
+
+    .stats-section{
+        grid-template-columns:repeat(2,1fr);
+    }
+}
+
+@media(max-width:700px){
+    .product-grid{
+        grid-template-columns:1fr;
+    }
+
+    .stats-section{
         grid-template-columns:1fr;
     }
 }
