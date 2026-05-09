@@ -1,0 +1,478 @@
+
+.result-page{
+    width:100%;
+    min-height:100vh;
+    padding:40px;
+    background:#f8f8fb;
+}
+
+.result-page h1{
+    font-size:30px;
+    color:#111827;
+    margin-bottom:28px;
+}
+
+/* STEPS */
+
+.result-steps{
+    display:flex;
+    align-items:center;
+    margin-bottom:32px;
+}
+
+.result-step{
+    display:flex;
+    align-items:center;
+    gap:10px;
+    color:#6b7280;
+    font-weight:600;
+}
+
+.result-step .step-circle{
+    width:36px;
+    height:36px;
+
+    border-radius:50%;
+
+    display:flex;
+    align-items:center;
+    justify-content:center;
+
+    background:#eef0f6;
+}
+
+.result-step.completed .step-circle{
+    background:#dcfce7;
+    color:#16a34a;
+}
+
+.result-step.active .step-circle{
+    background:#6d35f5;
+    color:white;
+}
+
+.result-step.active p{
+    color:#111827;
+}
+
+.step-line{
+    flex:1;
+    height:2px;
+    background:#e5e7eb;
+    margin:0 28px;
+}
+
+/* MAIN GRID */
+
+.result-main{
+    display:grid;
+    grid-template-columns:330px 1fr;
+    gap:24px;
+}
+
+/* COMMON CARDS */
+
+.final-score-card,
+.result-details,
+.info-card{
+    background:white;
+    border:1px solid #ececf3;
+    border-radius:20px;
+    box-shadow:0 8px 24px rgba(0,0,0,0.04);
+}
+
+/* LEFT SCORE CARD */
+
+.final-score-card{
+    padding:28px;
+    text-align:center;
+}
+
+.result-circle{
+    width:190px;
+    height:190px;
+
+    border-radius:50%;
+
+    margin:0 auto 24px;
+
+    display:flex;
+    align-items:center;
+    justify-content:center;
+}
+
+.result-circle-inner{
+    width:140px;
+    height:140px;
+
+    border-radius:50%;
+
+    background:white;
+
+    display:flex;
+    flex-direction:column;
+    align-items:center;
+    justify-content:center;
+}
+
+.result-circle-inner h2{
+    font-size:58px;
+    font-weight:800;
+    color:#050b1f;
+}
+
+.result-circle-inner p{
+    font-size:20px;
+    color:#6b7280;
+}
+
+/* WINNING / AVERAGE */
+
+.result-winning,
+.result-average{
+    display:flex;
+    align-items:center;
+    justify-content:center;
+    gap:10px;
+
+    padding:16px;
+
+    border-radius:12px;
+
+    font-size:18px;
+    font-weight:800;
+}
+
+.result-winning{
+    background:#eafff1;
+    color:#16a34a;
+}
+
+.result-average{
+    background:#fff7ed;
+    color:#ea580c;
+}
+
+.result-message{
+    margin-top:18px;
+
+    font-size:16px;
+    line-height:1.6;
+
+    color:#374151;
+}
+
+/* DETAILS */
+
+.result-details{
+    padding:28px;
+}
+
+.result-details h2{
+    font-size:22px;
+    color:#111827;
+    margin-bottom:18px;
+}
+
+/* SCORE BOXES */
+
+.breakdown-grid{
+    display:grid;
+    grid-template-columns:repeat(3,1fr);
+    gap:18px;
+}
+
+.score-box{
+    padding:22px;
+
+    border:1px solid #ececf3;
+    border-radius:16px;
+
+    background:#ffffff;
+}
+
+.score-box p{
+    color:#6b7280;
+    font-weight:600;
+    margin-bottom:12px;
+}
+
+.score-box h3{
+    font-size:34px;
+    color:#050b1f;
+}
+
+.score-box h3 span{
+    font-size:18px;
+    color:#6b7280;
+}
+
+/* MARKET INSIGHTS */
+
+.insight-title{
+    margin-top:30px;
+}
+
+.market-grid{
+    display:grid;
+    grid-template-columns:1fr 1fr;
+    gap:18px;
+}
+
+.market-card{
+    padding:22px;
+
+    border:1px solid #ececf3;
+    border-radius:16px;
+
+    background:white;
+}
+
+.market-card p{
+    color:#6b7280;
+    font-weight:600;
+    margin-bottom:12px;
+}
+
+.market-card h3{
+    font-size:36px;
+    color:#050b1f;
+}
+
+.market-card h3 span{
+    font-size:18px;
+    color:#6b7280;
+}
+
+/* ADS CARD */
+
+.ads-card{
+    display:flex;
+    align-items:center;
+    justify-content:space-between;
+}
+
+.ads-card svg{
+    font-size:46px;
+
+    color:#6d35f5;
+
+    background:#f0e9ff;
+
+    padding:10px;
+
+    border-radius:14px;
+}
+
+/* COMPETITION COLORS */
+
+.low-comp{
+    color:#16a34a;
+    font-weight:800;
+}
+
+.medium-comp{
+    color:#f59e0b;
+    font-weight:800;
+}
+
+.high-comp{
+    color:#dc2626;
+    font-weight:800;
+}
+
+/* GRAPH */
+
+.result-mini-graph{
+    width:100%;
+    height:60px;
+
+    margin-top:12px;
+}
+
+.result-mini-graph polyline{
+    filter:drop-shadow(
+        0 4px 6px rgba(109,53,245,0.25)
+    );
+}
+
+/* LOWER ANALYSIS SECTION */
+
+.analysis-grid{
+    margin-top:24px;
+
+    display:grid;
+    grid-template-columns:repeat(3,1fr);
+
+    gap:24px;
+}
+
+/* COMMON INFO CARD */
+
+.info-card{
+    padding:24px;
+    border-radius:20px;
+}
+
+/* STRENGTH CARD */
+
+.info-card.strength{
+    background:#f0fdf4;
+    border:1px solid #bbf7d0;
+}
+
+.info-card.strength h3{
+    color:#16a34a;
+}
+
+/* WEAKNESS CARD */
+
+.info-card.weakness{
+    background:#fef2f2;
+    border:1px solid #fecaca;
+}
+
+.info-card.weakness h3{
+    color:#dc2626;
+}
+
+/* TIPS CARD */
+
+.info-card.tips{
+    background:#fffbea;
+    border:1px solid #fde68a;
+}
+
+.info-card.tips h3{
+    color:#d97706;
+}
+
+/* TITLES */
+
+.info-card h3{
+    font-size:22px;
+    margin-bottom:18px;
+}
+
+/* ROWS */
+
+.info-row{
+    display:flex;
+    align-items:flex-start;
+    gap:10px;
+
+    margin-bottom:14px;
+}
+
+.info-row svg{
+    min-width:20px;
+    margin-top:2px;
+}
+
+/* ICON COLORS */
+
+.info-card.strength .info-row svg{
+    color:#16a34a;
+}
+
+.info-card.weakness .info-row svg{
+    color:#dc2626;
+}
+
+.info-card.tips .info-row svg{
+    color:#d97706;
+}
+
+.info-row p{
+    color:#374151;
+    font-weight:500;
+    line-height:1.5;
+}
+
+/* ACTION BUTTONS */
+
+.result-actions{
+    margin-top:26px;
+
+    display:flex;
+    justify-content:space-between;
+    align-items:center;
+}
+
+.reset-btn,
+.save-btn{
+    height:54px;
+
+    padding:0 26px;
+
+    border-radius:12px;
+
+    display:flex;
+    align-items:center;
+    gap:10px;
+
+    font-weight:800;
+
+    text-decoration:none;
+
+    cursor:pointer;
+
+    transition:0.2s ease;
+}
+
+.reset-btn{
+    background:white;
+    color:#374151;
+    border:1px solid #e5e7eb;
+}
+
+.save-btn{
+    background:#6d35f5;
+    color:white;
+    border:none;
+
+    box-shadow:
+    0 8px 20px rgba(109,53,245,0.25);
+}
+
+.reset-btn:hover,
+.save-btn:hover{
+    transform:translateY(-2px);
+}
+
+/* RESPONSIVE */
+
+@media(max-width:1100px){
+
+    .result-main{
+        grid-template-columns:1fr;
+    }
+
+    .analysis-grid{
+        grid-template-columns:1fr;
+    }
+}
+
+@media(max-width:800px){
+
+    .breakdown-grid,
+    .market-grid{
+        grid-template-columns:1fr;
+    }
+
+    .result-page{
+        padding:24px;
+    }
+
+    .result-actions{
+        flex-direction:column;
+        gap:16px;
+    }
+
+    .reset-btn,
+    .save-btn{
+        width:100%;
+        justify-content:center;
+    }
+}
+
