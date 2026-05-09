@@ -1,4 +1,4 @@
-import React from "react";
+import { useEffect, useState } from "react";
 import "./Result.css";
 import {
   FiCheck,
@@ -9,43 +9,56 @@ import {
   FiUsers,
   FiArrowRight,
 } from "react-icons/fi";
-import { Link } from "react-router-dom";
+import { Link, useLocation } from "react-router-dom";
+import {
+  getLatestResult,
+  isResultSaved,
+  saveLatestResult,
+  saveResultToHistory,
+} from "../utils/storage";
 
 const Result = ({ resultData }) => {
-  const data = resultData || {
-    totalScore: 86,
-    criteriaScore: 72,
-    marketScore: 10,
-    competitionScore: 4,
-    googleTrends: 78,
-    activeAds: 120,
-    strengths: [
-      "Solves real problem",
-      "High perceived value",
-      "Improves convenience",
-      "Easy to market with videos",
-      "High profit margin",
-    ],
-    weaknesses: [
-      "Not a unique product",
-      "Not very small in size",
-      "Medium competition in market",
-    ],
-    tips: [
-      "Try to highlight uniqueness in your marketing.",
-      "Focus on a specific niche audience.",
-    ],
+  const location = useLocation();
+  const data = location.state?.resultData || resultData || getLatestResult();
+  const [, setSavedVersion] = useState(0);
+
+  useEffect(() => {
+    if (location.state?.resultData) {
+      saveLatestResult(location.state.resultData);
+    }
+  }, [location.state]);
+
+  if (!data) {
+    return (
+      <div className="result-page">
+        <h1>Results</h1>
+
+        <div className="result-empty-state">
+          <h2>No calculation found</h2>
+          <p>Go to the analysis form, enter the product details, and calculate the score first.</p>
+          <Link to="/analyse" className="reset-btn">
+            <FiRefreshCw /> Analyse a Product
+          </Link>
+        </div>
+      </div>
+    );
+  }
+
+  const isWinning = data.verdictTone === "winning";
+  const isWeak = data.verdictTone === "weak";
+  const saved = isResultSaved(data.id);
+  const verdictClassName = isWinning
+    ? "result-winning"
+    : isWeak
+    ? "result-weak"
+    : "result-average";
+  const ringColor = isWinning ? "#22c55e" : isWeak ? "#ef4444" : "#f97316";
+
+  const handleSave = () => {
+    saveResultToHistory(data);
+    saveLatestResult(data);
+    setSavedVersion((currentValue) => currentValue + 1);
   };
-
-  const isWinning = data.totalScore >= 75;
-
-  const getCompetitionLevel = (ads) => {
-    if (ads < 100) return "Low Competition";
-    if (ads <= 500) return "Medium Competition";
-    return "High Competition";
-  };
-
-  const competitionLevel = getCompetitionLevel(data.activeAds);
 
   return (
     <div className="result-page">
@@ -53,7 +66,9 @@ const Result = ({ resultData }) => {
 
       <div className="result-steps">
         <div className="result-step completed">
-          <div className="step-circle"><FiCheck /></div>
+          <div className="step-circle">
+            <FiCheck />
+          </div>
           <p>Calculate Score</p>
         </div>
 
@@ -67,12 +82,14 @@ const Result = ({ resultData }) => {
 
       <div className="result-main">
         <div className="final-score-card">
+          <p className="result-product-name">{data.productName}</p>
+
           <div
             className="result-circle"
             style={{
-              background: `conic-gradient(${
-                isWinning ? "#22c55e" : "#f97316"
-              } ${data.totalScore * 3.6}deg, #eef0f6 0deg)`,
+              background: `conic-gradient(${ringColor} ${
+                data.totalScore * 3.6
+              }deg, #eef0f6 0deg)`,
             }}
           >
             <div className="result-circle-inner">
@@ -81,16 +98,12 @@ const Result = ({ resultData }) => {
             </div>
           </div>
 
-          <div className={isWinning ? "result-winning" : "result-average"}>
+          <div className={verdictClassName}>
             {isWinning ? <FiAward /> : <FiAlertTriangle />}
-            {isWinning ? "Winning Product" : "Average Product"}
+            {data.verdict}
           </div>
 
-          <p className="result-message">
-            {isWinning
-              ? "This product has high potential for success!"
-              : "This product needs improvement before scaling."}
-          </p>
+          <p className="result-message">{data.message}</p>
         </div>
 
         <div className="result-details">
@@ -107,7 +120,10 @@ const Result = ({ resultData }) => {
           <div className="market-grid">
             <div className="market-card">
               <p>Google Trends Score</p>
-              <h3>{data.googleTrends}<span>/100</span></h3>
+              <h3>
+                {data.googleTrends}
+                <span>/100</span>
+              </h3>
 
               <svg className="result-mini-graph" viewBox="0 0 120 50">
                 <polyline
@@ -128,19 +144,27 @@ const Result = ({ resultData }) => {
                 <h3>{data.activeAds}</h3>
                 <span
                   className={
-                    competitionLevel === "Low Competition"
+                    data.competitionLevel === "Low Competition"
                       ? "low-comp"
-                      : competitionLevel === "Medium Competition"
+                      : data.competitionLevel === "Medium Competition"
                       ? "medium-comp"
                       : "high-comp"
                   }
                 >
-                  {competitionLevel}
+                  {data.competitionLevel}
                 </span>
               </div>
 
               <FiUsers />
             </div>
+          </div>
+
+          <h2 className="insight-title">Formula Highlights</h2>
+
+          <div className="breakdown-grid">
+            {(data.formulaBreakdown || []).map((item) => (
+              <ScoreBox key={item.label} label={item.label} value={item.value} max={item.max} />
+            ))}
           </div>
         </div>
       </div>
@@ -156,8 +180,8 @@ const Result = ({ resultData }) => {
           <FiRefreshCw /> Reset
         </Link>
 
-        <button className="save-btn">
-          <FiSave /> Save to History <FiArrowRight />
+        <button type="button" className="save-btn" onClick={handleSave} disabled={saved}>
+          <FiSave /> {saved ? "Saved to History" : "Save to History"} <FiArrowRight />
         </button>
       </div>
     </div>
@@ -181,8 +205,8 @@ const InfoCard = ({ title, type, items }) => {
     <div className={`info-card ${type}`}>
       <h3>{title}</h3>
 
-      {items.map((item, index) => (
-        <div className="info-row" key={index}>
+      {items.map((item) => (
+        <div className="info-row" key={item}>
           <FiCheck />
           <p>{item}</p>
         </div>

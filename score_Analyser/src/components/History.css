@@ -71,6 +71,20 @@
     cursor:pointer;
 }
 
+.history-empty-state{
+    padding:48px 24px;
+    text-align:center;
+}
+
+.history-empty-state h2{
+    margin-bottom:12px;
+    color:#111827;
+}
+
+.history-empty-state p{
+    color:#6b7280;
+}
+
 .history-table-card{
     background:white;
     border:1px solid #ececf3;
